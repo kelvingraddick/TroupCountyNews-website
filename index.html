@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="KG.codes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <meta name="description" content="">
+    <title>Troup County News Subscription</title>
+    <script src="assets/configuration.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <script>
+        var stripeConfiguration = stripeConfiguration || {}; // loaded from assets/configuration.js
+
+        var stripeSdk = Stripe(stripeConfiguration.API_KEY);
+
+        function checkout(priceId) {
+            stripeSdk.redirectToCheckout({
+                lineItems: [{ price: priceId, quantity: 1 }],
+                mode: 'subscription',
+                successUrl: 'http://troupcountynews.wavelinkllc.com/success/',
+                cancelUrl: 'http://troupcountynews.wavelinkllc.com',
+                shippingAddressCollection: { allowedCountries: ['US'] }
+            }).then(function (result) {
+                window.alert(result.error.message);
+            });
+        }
+    </script>
+    <style></style>
+</head>
+<body>
+    <section class="mbr-section--bg-adapted mbr-section--relative" id="pricing-table1-3" data-rv-view="0" style="background-color: rgb(103, 58, 183);">
+        <div class="pricing" id="pricing" style="padding-top: 100px; padding-bottom: 100px;">
+            
+            <div class="container">
+                <div class="section-head-lite text-center col-md-8 col-md-offset-2 space80">
+                    <h1 class="mbr-title-font">Troup County News Subscription</h1>
+                    <p>Select the subscription option you want from the plans below:</p>
+                </div>
+                <div class="row pricing1">
+                    <div class="col-md-12">
+                        <div class="col-sm-3 price-styles" style="display: block;">
+                            <div class="pricing__item price-four-el" data-hover="">
+                                <h3 class="pricing__title mbr-title-font mbr-primary-color">Online Option</h3>
+                                <p class="pricing__sentence">Accessible over the web.</p>
+                                <div class="pricing__price mbr-title-font">
+                                    <span>$29</span><br />
+                                    <span class="pricing__period">per year</span>
+                                </div>
+                                <!--<div><ul class="pricing__feature-list mbr-text-font"><li class="pricing__feature">200 GB of space</li><li class="pricing__feature">Support at $25/hour</li><li class="pricing__feature">Small social media</li></ul></div>-->
+                                <div><button class="btn mbr-title-font btn-primary" onclick="checkout(stripeConfiguration.PRODUCT_1_ID);">Subscribe</button></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 price-styles" data-hover="Most popular" style="display: block;"><div class="popular mbr-title-font price-four-el"><strong>Most Popular</strong></div>
+                            <div class="pricing__item pricing__item__popular price-four-el">
+                                <h3 class="pricing__title mbr-title-font mbr-primary-color">Paper Option 1</h3>
+                                <p class="pricing__sentence">Delivered to your home.</p>
+                                <div class="pricing__price mbr-title-font">
+                                    <span>$69</span><br />
+                                    <span class="pricing__period">per year</span>
+                                </div>
+                                <!--<div><ul class="pricing__feature-list mbr-text-font"><li class="pricing__feature">200 GB of space</li><li class="pricing__feature">Support at $25/hour</li><li class="pricing__feature">Small social media</li></ul></div>-->
+                                <div><button class="btn mbr-title-font btn-primary" onclick="checkout(stripeConfiguration.PRODUCT_2_ID);">Subscribe</button></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 price-styles" style="display: block;">
+                            <div class="pricing__item price-four-el">
+                                <h3 class="pricing__title mbr-title-font mbr-primary-color">Paper Option 2</h3>
+                                <p class="pricing__sentence">Delivered to your home.</p>
+                                <div class="pricing__price mbr-title-font">
+                                    <span>$49</span><br />
+                                    <span class="pricing__period">per 6 months</span>
+                                </div>
+                                <!--<div><ul class="pricing__feature-list mbr-text-font"><li class="pricing__feature">200 GB of space</li><li class="pricing__feature">Support at $25/hour</li><li class="pricing__feature">Small social media</li></ul></div>-->
+                                <div><button class="btn mbr-title-font btn-primary" onclick="checkout(stripeConfiguration.PRODUCT_3_ID);">Subscribe</button></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 price-styles" style="display: block;">
+                            <div class="pricing__item price-four-el">
+                                <h3 class="pricing__title mbr-title-font mbr-primary-color">Paper Option 3</h3>
+                                <p class="pricing__sentence">Delivered to your home.</p>
+                                <div class="pricing__price mbr-title-font">
+                                    <span>$29</span><br />
+                                    <span class="pricing__period">per 3 months</span>
+                                </div>
+                                <!--<div><ul class="pricing__feature-list mbr-text-font"><li class="pricing__feature">200 GB of space</li><li class="pricing__feature">Support at $25/hour</li><li class="pricing__feature">Small social media</li></ul></div>-->
+                                <div><button class="btn mbr-title-font btn-primary" onclick="checkout(stripeConfiguration.PRODUCT_4_ID);">Subscribe</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="margin-top: 20px; margin-bottom: 20px; text-align: center;">Created with ❤️ by <a style="color: black;" href="https://www.kg.codes">KG.codes</a></div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
