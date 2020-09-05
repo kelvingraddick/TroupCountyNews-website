@@ -1,7 +1,7 @@
 var stripeConfiguration = {
-    API_KEY: 'pk_test_51HNU9rB92LTxM4bDFWXsrOFSawP1sWqmBb6DWkSGQR2hhhiX5WfXVHmt3UQCY8BeVGPX44PUVWuRfOzw1BuOdWho005z3c9jTn',
-    PRODUCT_1_ID: 'price_1HNUGzB92LTxM4bDhx20MnuK',
-    PRODUCT_2_ID: 'price_1HNUKbB92LTxM4bDXK4SntBw',
-    PRODUCT_3_ID: 'price_1HNUKcB92LTxM4bDbWtHRoQp',
-    PRODUCT_4_ID: 'price_1HNUKcB92LTxM4bDp2FwHMKX'
+    API_KEY: 'Stripe API Key',
+    PRODUCT_1_ID: 'Stripe product 1 ID',
+    PRODUCT_2_ID: 'Stripe product 2 ID',
+    PRODUCT_3_ID: 'Stripe product 3 ID',
+    PRODUCT_4_ID: 'Stripe product 4 ID'
 };
